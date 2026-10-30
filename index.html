@@ -1,0 +1,574 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="theme-color" content="#09090f">
+
+    <title>GHOSTWRITE AI — The Haunted Storyteller</title>
+
+    <meta name="description"
+          content="A haunted storyteller powered by open-source AI.
+          Create eerie stories and preserve memories locally.">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+    <link href="https://fonts.googleapis.com/css2?family=DM+Mono:wght@400;500&family=Space+Grotesk:wght@400;500;600;700&display=swap"
+          rel="stylesheet">
+
+    <link rel="stylesheet" href="style.css">
+    <script src="script.js" defer></script>
+</head>
+
+<body>
+
+    <div class="ambient ambient-one"></div>
+    <div class="ambient ambient-two"></div>
+    <div class="noise"></div>
+
+    <!-- Navigation -->
+    <header class="navbar">
+        <a href="#home" class="brand">
+            <span class="brand-icon">✳</span>
+            <span>GHOSTWRITE<span class="brand-ai">.AI</span></span>
+        </a>
+
+        <nav class="nav-links" aria-label="Main navigation">
+            <a href="#story">Story Lab</a>
+            <a href="#terminal">Ghost Terminal</a>
+            <a href="#memories">Memory Garden</a>
+        </nav>
+
+        <div class="nav-status">
+            <span class="status-dot"></span>
+            <span id="connectionStatus">LOCAL MODE</span>
+        </div>
+
+        <button class="mobile-menu" id="mobileMenu"
+                aria-label="Toggle navigation" aria-expanded="false">
+            ☰
+        </button>
+    </header>
+
+    <main id="home">
+
+        <!-- Hero -->
+        <section class="hero section-shell">
+
+            <div class="hero-copy">
+                <div class="eyebrow">
+                    <span class="eyebrow-symbol">◈</span>
+                    OPEN-SOURCE AI EXPERIENCE
+                </div>
+
+                <h1>
+                    Something is<br>
+                    <span class="ghost-text">writing</span>
+                    <span class="outline-text">back.</span>
+                </h1>
+
+                <p class="hero-description">
+                    Enter the space between code and consciousness.
+                    Create unsettling stories, explore a haunted terminal,
+                    and preserve the memories that refuse to disappear.
+                </p>
+
+                <div class="hero-actions">
+                    <a href="#story" class="button button-primary">
+                        Summon a story <span>↗</span>
+                    </a>
+
+                    <a href="#memories" class="button button-secondary">
+                        Enter Memory Garden
+                    </a>
+                </div>
+
+                <div class="hero-footnote">
+                    <span>✳</span>
+                    YOUR PROMPTS STAY ON YOUR MACHINE IN LOCAL AI MODE
+                </div>
+            </div>
+
+            <div class="hero-art">
+                <div class="orbit orbit-one"></div>
+                <div class="orbit orbit-two"></div>
+
+                <div class="moon"></div>
+
+                <div class="ghost-figure">
+                    <div class="ghost-head">
+                        <div class="ghost-eyes">
+                            <span></span>
+                            <span></span>
+                        </div>
+                        <div class="ghost-mouth"></div>
+                    </div>
+
+                    <div class="ghost-body"></div>
+                    <div class="ghost-tail"></div>
+                </div>
+
+                <div class="floating-card card-top">
+                    <span class="card-dot"></span>
+                    ENTITY DETECTED
+                    <strong>Unknown presence</strong>
+                </div>
+
+                <div class="floating-card card-bottom">
+                    <span class="mono muted">SIGNAL STRENGTH</span>
+                    <strong class="signal">87.4<span>%</span></strong>
+                    <div class="signal-bars">
+                        <i></i><i></i><i></i><i></i><i></i>
+                        <i></i><i></i><i></i><i></i><i></i>
+                    </div>
+                </div>
+
+                <span class="art-coordinate coordinate-one">
+                    31°N / UNKNOWN
+                </span>
+
+                <span class="art-coordinate coordinate-two">
+                    DO NOT LOOK BACK
+                </span>
+            </div>
+        </section>
+
+        <!-- Status strip -->
+        <section class="status-strip section-shell">
+            <div class="strip-item">
+                <span class="strip-icon">◉</span>
+                <div>
+                    <strong>Open-weight intelligence</strong>
+                    <span>Run your own model</span>
+                </div>
+            </div>
+
+            <div class="strip-divider"></div>
+
+            <div class="strip-item">
+                <span class="strip-icon">⌘</span>
+                <div>
+                    <strong>Local-first by design</strong>
+                    <span>Your machine, your rules</span>
+                </div>
+            </div>
+
+            <div class="strip-divider"></div>
+
+            <div class="strip-item">
+                <span class="strip-icon">✳</span>
+                <div>
+                    <strong>Nothing forgotten</strong>
+                    <span>Preserve what matters</span>
+                </div>
+            </div>
+        </section>
+
+        <!-- Story Lab -->
+        <section id="story" class="content-section section-shell">
+
+            <div class="section-heading">
+                <div>
+                    <div class="eyebrow">01 / THE UNKNOWN</div>
+                    <h2>Story <span class="accent-text">Lab.</span></h2>
+                    <p>
+                        Give the darkness a prompt. See what answers.
+                    </p>
+                </div>
+
+                <span class="section-index">S-001</span>
+            </div>
+
+            <div class="story-layout">
+
+                <div class="panel story-controls">
+                    <div class="panel-topline">
+                        <span class="mono">CONFIGURE YOUR NIGHTMARE</span>
+                        <span class="tiny-indicator">● READY</span>
+                    </div>
+
+                    <form id="storyForm">
+
+                        <label for="storyPrompt">WHAT HAUNTS YOU?</label>
+
+                        <textarea id="storyPrompt"
+                                  maxlength="500"
+                                  rows="4"
+                                  placeholder="A forgotten railway station where the announcements predict tomorrow's deaths..."
+                        ></textarea>
+
+                        <div class="field-meta">
+                            <span>Describe a place, person, or mystery.</span>
+                            <span id="promptCount">0 / 500</span>
+                        </div>
+
+                        <label for="storyGenre">NARRATIVE FREQUENCY</label>
+
+                        <div class="select-wrap">
+                            <select id="storyGenre">
+                                <option value="psychological horror">
+                                    Psychological Horror
+                                </option>
+                                <option value="supernatural mystery">
+                                    Supernatural Mystery
+                                </option>
+                                <option value="cosmic horror">
+                                    Cosmic Horror
+                                </option>
+                                <option value="gothic ghost story">
+                                    Gothic Ghost Story
+                                </option>
+                                <option value="folklore-inspired horror">
+                                    Folklore-Inspired Horror
+                                </option>
+                                <option value="bittersweet remembrance">
+                                    Bittersweet Remembrance
+                                </option>
+                            </select>
+                        </div>
+
+                        <label>INTENSITY</label>
+
+                        <div class="intensity-options">
+                            <button type="button"
+                                    class="intensity-option"
+                                    data-intensity="1">
+                                I <span>Whispers</span>
+                            </button>
+
+                            <button type="button"
+                                    class="intensity-option active"
+                                    data-intensity="2">
+                                II <span>Unsettling</span>
+                            </button>
+
+                            <button type="button"
+                                    class="intensity-option"
+                                    data-intensity="3">
+                                III <span>Nightmare</span>
+                            </button>
+                        </div>
+
+                        <button type="submit"
+                                class="button button-primary generate-button"
+                                id="generateButton">
+                            <span class="button-label">✳ Generate story</span>
+                            <span class="button-arrow">↗</span>
+                        </button>
+
+                        <p class="privacy-note">
+                            <span>🔒</span>
+                            Local AI requests go to your own Ollama server.
+                        </p>
+                    </form>
+                </div>
+
+                <div class="panel story-output">
+
+                    <div class="output-header">
+                        <div class="output-title">
+                            <span class="output-icon">✳</span>
+                            <div>
+                                <strong>TRANSMISSION #<span id="transmissionId">001</span></strong>
+                                <span id="storyMode">STANDBY — AWAITING INPUT</span>
+                            </div>
+                        </div>
+
+                        <button id="clearStory"
+                                class="icon-button"
+                                type="button"
+                                title="Clear story"
+                                aria-label="Clear story">
+                            ↺
+                        </button>
+                    </div>
+
+                    <div id="storyResult"
+                         class="story-result"
+                         aria-live="polite">
+                        <div class="empty-story">
+                            <div class="empty-symbol">☽</div>
+
+                            <h3>The page is listening.</h3>
+
+                            <p>
+                                Every ghost begins with a story.
+                                Enter a prompt and let the unknown speak.
+                            </p>
+
+                            <button type="button"
+                                    class="sample-prompt"
+                                    data-prompt="An abandoned observatory receives a signal from a star that disappeared a thousand years ago.">
+                                Try a sample prompt <span>↗</span>
+                            </button>
+                        </div>
+                    </div>
+
+                    <div class="output-footer">
+                        <span id="wordCount">0 WORDS</span>
+                        <div class="output-actions">
+                            <button id="copyStory"
+                                    class="text-button"
+                                    type="button">
+                                ▢ Copy
+                            </button>
+
+                            <button id="downloadStory"
+                                    class="text-button"
+                                    type="button">
+                                ↓ Export .txt
+                            </button>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+        </section>
+
+        <!-- Haunted terminal -->
+        <section id="terminal" class="content-section section-shell">
+
+            <div class="section-heading">
+                <div>
+                    <div class="eyebrow">02 / SIGNAL INTERCEPTED</div>
+                    <h2>Ghost <span class="accent-text">Terminal.</span></h2>
+                    <p>
+                        The machine has something it needs to tell you.
+                    </p>
+                </div>
+
+                <span class="section-index">T-404</span>
+            </div>
+
+            <div class="terminal-window">
+                <div class="terminal-topbar">
+                    <div class="terminal-lights">
+                        <span></span><span></span><span></span>
+                    </div>
+
+                    <span class="terminal-title">
+                        ghost@machine: ~ / unexplained-events
+                    </span>
+
+                    <span class="terminal-live">
+                        <span class="status-dot"></span> LIVE
+                    </span>
+                </div>
+
+                <div id="terminalOutput"
+                     class="terminal-output"
+                     role="log"
+                     aria-live="polite">
+                    <p class="terminal-line muted">
+                        GHOST OS [Version 13.10.31]
+                    </p>
+                    <p class="terminal-line muted">
+                        Copyright (c) Nobody. All rights forgotten.
+                    </p>
+                    <p class="terminal-line">&nbsp;</p>
+                    <p class="terminal-line terminal-green">
+                        Initializing spectral interface...
+                    </p>
+                    <p class="terminal-line terminal-green">
+                        Connection established. Something is listening.
+                    </p>
+                    <p class="terminal-line">&nbsp;</p>
+                    <p class="terminal-line">
+                        Type <span class="terminal-yellow">help</span>
+                        to discover available commands.
+                    </p>
+                </div>
+
+                <form id="terminalForm" class="terminal-input-row">
+                    <label for="terminalInput" class="terminal-prompt">
+                        guest@ghost:~$
+                    </label>
+
+                    <input id="terminalInput"
+                           type="text"
+                           autocomplete="off"
+                           placeholder="type a command..."
+                           maxlength="160">
+
+                    <button type="submit" aria-label="Run command">
+                        ↵
+                    </button>
+                </form>
+
+                <div class="terminal-bottom">
+                    <span>SESSION: ANONYMOUS</span>
+                    <span>LOCATION: UNDISCLOSED</span>
+                    <span>THREAT LEVEL: <b>UNKNOWN</b></span>
+                </div>
+            </div>
+
+            <div class="command-hints">
+                <span>QUICK COMMANDS</span>
+                <button type="button" data-command="help">help</button>
+                <button type="button" data-command="scan">scan</button>
+                <button type="button" data-command="whisper">whisper</button>
+                <button type="button" data-command="status">status</button>
+                <button type="button" data-command="clear">clear</button>
+            </div>
+        </section>
+
+        <!-- Memory Garden -->
+        <section id="memories" class="content-section section-shell">
+
+            <div class="section-heading">
+                <div>
+                    <div class="eyebrow">03 / WHAT REMAINS</div>
+                    <h2>Memory <span class="accent-text">Garden.</span></h2>
+                    <p>
+                        A quiet place for stories that deserve to live on.
+                    </p>
+                </div>
+
+                <span class="section-index">M-001</span>
+            </div>
+
+            <div class="memory-layout">
+
+                <div class="panel memory-form-panel">
+                    <div class="memory-flower">✳</div>
+
+                    <h3>Leave a light on.</h3>
+
+                    <p>
+                        Preserve a meaningful memory, a family story,
+                        a tribute, or a message to someone you miss.
+                    </p>
+
+                    <form id="memoryForm">
+
+                        <label for="memoryTitle">TITLE</label>
+                        <input id="memoryTitle"
+                               type="text"
+                               maxlength="80"
+                               placeholder="A name, a place, a moment..."
+                               required>
+
+                        <label for="memoryCategory">KIND OF MEMORY</label>
+                        <select id="memoryCategory">
+                            <option value="Personal memory">Personal memory</option>
+                            <option value="Family story">Family story</option>
+                            <option value="Tribute">Tribute</option>
+                            <option value="Letter">Unsent letter</option>
+                            <option value="Folklore">Folklore &amp; legends</option>
+                        </select>
+
+                        <label for="memoryContent">THE STORY</label>
+                        <textarea id="memoryContent"
+                                  maxlength="3000"
+                                  rows="5"
+                                  placeholder="Write what you want to preserve..."
+                                  required></textarea>
+
+                        <button type="submit"
+                                class="button button-primary memory-submit">
+                            Preserve this memory <span>✳</span>
+                        </button>
+                    </form>
+
+                    <div class="memory-privacy">
+                        <span>◉</span>
+                        Saved in this browser on this device.
+                    </div>
+                </div>
+
+                <div class="memory-collection">
+                    <div class="collection-heading">
+                        <div>
+                            <span class="mono">THE ARCHIVE</span>
+                            <h3>Things that remain.</h3>
+                        </div>
+
+                        <span id="memoryCount" class="memory-count">
+                            00 ENTRIES
+                        </span>
+                    </div>
+
+                    <div id="memoryList" class="memory-list">
+                        <div class="empty-memories">
+                            <span>☽</span>
+                            <p>Your garden is waiting.</p>
+                            <small>
+                                Your first memory will bloom here.
+                            </small>
+                        </div>
+                    </div>
+
+                    <p class="archive-note">
+                        Your memories are not uploaded anywhere by this app.
+                        Clearing browser data may erase this local archive.
+                    </p>
+                </div>
+            </div>
+        </section>
+
+        <!-- Open-source mission -->
+        <section class="manifesto section-shell">
+
+            <div class="manifesto-mark">✳</div>
+
+            <div class="manifesto-content">
+                <div class="eyebrow">THE OPEN INNOVATION MANIFESTO</div>
+
+                <h2>
+                    Intelligence should be<br>
+                    <span class="accent-text">yours to keep.</span>
+                </h2>
+
+                <p>
+                    Ghostwrite AI explores what happens when creative AI
+                    belongs to the people using it. Open-weight models let
+                    you run inference on your own hardware, inspect how your
+                    system is built, and choose a model that fits your needs.
+                    Personal memories deserve the same care.
+                </p>
+
+                <div class="manifesto-points">
+                    <div>
+                        <span>01</span>
+                        <strong>Local inference</strong>
+                        <p>Run a supported model on your own computer.</p>
+                    </div>
+
+                    <div>
+                        <span>02</span>
+                        <strong>Data autonomy</strong>
+                        <p>Keep private journal entries in your browser.</p>
+                    </div>
+
+                    <div>
+                        <span>03</span>
+                        <strong>Model freedom</strong>
+                        <p>Choose another compatible model when you want.</p>
+                    </div>
+                </div>
+
+                <a href="#story" class="manifesto-link">
+                    Return to the unknown <span>↗</span>
+                </a>
+            </div>
+        </section>
+
+    </main>
+
+    <!-- Footer -->
+    <footer class="footer section-shell">
+        <a href="#home" class="brand">
+            <span class="brand-icon">✳</span>
+            <span>GHOSTWRITE<span class="brand-ai">.AI</span></span>
+        </a>
+
+        <p>Built in the dark. Powered by open innovation.</p>
+
+        <span class="footer-date">HALLOWEEN / 2026</span>
+    </footer>
+
+    <div id="toast" class="toast" role="status" aria-live="polite"></div>
+
+</body>
+</html>
