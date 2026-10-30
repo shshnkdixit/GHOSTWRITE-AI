@@ -1,0 +1,33 @@
+# GHOSTWRITE AI - The Haunted Storyteller
+
+GHOSTWRITE AI is an AI-powered storytelling web application that generates horror stories from user prompts. It features a haunted interface, an interactive terminal, and a Memory Garden for saving favorite stories.
+
+## Features
+- AI horror story generation
+- Interactive haunted terminal
+- Memory Garden to save stories
+- Copy and download stories
+- Responsive design
+
+## Technologies Used
+- HTML
+- CSS
+- JavaScript
+- Ollama with an open-weight AI model (if configured)
+
+## How to Run
+1. Clone this repository.
+2. Open the project folder in VS Code.
+3. Open `index.html` using Live Server.
+4. Start exploring the application.
+
+Note: AI story generation requires a configured AI backend.
+
+## Project Goal
+This project explores the combination of artificial intelligence, creative storytelling, and interactive web design through the theme "Ghost in the Machine."
+
+## Development
+Built with assistance from ChatGPT.
+
+## License
+Add a license file to specify how others can use, modify, and distribute this project.
